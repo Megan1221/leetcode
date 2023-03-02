@@ -26,3 +26,4 @@ var sortedSquares = function (nums) {
   }
   return res
 };
+// 双指针，从两端到中间，绝对值从大到小

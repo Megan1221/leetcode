@@ -24,4 +24,6 @@ var wiggleMaxLength = function(nums) {
   return Math.max(down,up)
 };
 // @lc code=end
+// 动态规划：对于我们当前考虑的这个数，要么是作为山峰（即nums[i] > nums[i-1]），要么是作为山谷（即nums[i] < nums[i - 1]）。
+
 

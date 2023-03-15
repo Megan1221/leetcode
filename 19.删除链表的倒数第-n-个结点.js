@@ -19,6 +19,7 @@
  */
 var removeNthFromEnd = function (head, n) {
   let ptr = head
+  // 虚拟头指针（head可能会被删除，所以要用newHead作为固定的头）
   let newHead = new ListNode(101, head)
   let left = newHead
   let len = 1
@@ -29,9 +30,11 @@ var removeNthFromEnd = function (head, n) {
       left = left.next  
     } 
   }
+  // 删除temp节点
   const temp = left.next
   left.next = temp === null ? null : temp.next
-  return left.val === 101 && left.next === null?  null : newHead.next 
+  // 括号内对应[1],1的情况
+  return (left.val === 101 && left.next === null)?  null : newHead.next 
 
 };
 // @lc code=end

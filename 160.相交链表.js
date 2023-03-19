@@ -56,4 +56,5 @@ function moveN(head, n) {
   return ptr
 }
 // @lc code=end
+// 从两个链表的构造过程分析，长度做差，长的先走n步，然后再一起走就好了，而不是比较value
 

@@ -12,7 +12,9 @@
 // const sumMap = new Map()
 var isHappy = function(n) {
   const sumSet = new Set()
+  // 递归求解
   function isSumHappy(n) {
+    // 边界条件
     if (Math.log10(n) % 1 === 0) {
       return true
     }
@@ -35,6 +37,14 @@ function getSquareSum(n) {
     res += i ** 2 
   }
   return res
+
+  /**
+   *    let sum = 0 
+        while (n) {
+          sum += (n % 10) ** 2
+          n = Math.floor(n / 10)
+        }
+   */
 }
 
 // @lc code=end

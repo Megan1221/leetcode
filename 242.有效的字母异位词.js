@@ -11,7 +11,7 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-  // const letterMap = new Array(26).fill(0)
+
   const letterMap = new Map()
   for (let i of s.split('')) {
     const cnt = letterMap.get(i)
@@ -20,8 +20,8 @@ var isAnagram = function(s, t) {
     } else {
       letterMap.set(i, cnt + 1)
     }
+    // letterMap.set(i, (letterMap.get(key) || 0) + 1 )
   }
-  // console.log(letterMap)
   for (let i of t.split('')) {
     const cnt = letterMap.get(i)
     if (cnt === undefined || cnt <= 0) {
@@ -38,4 +38,6 @@ var isAnagram = function(s, t) {
   
 };
 // @lc code=end
+// 数组就是简单的哈希表
+// 也可以用数组：字符a到字符z的ASCII是26个连续的数值，所以字符a映射为下标0，字符z映射为下标25
 

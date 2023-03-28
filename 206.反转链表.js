@@ -19,7 +19,7 @@
 var reverseList = function (head) {
   let cur = head, last = null
   while (cur !== null) {
-    next = cur.next
+    let next = cur.next
     cur.next = last
     last = cur
     cur = next

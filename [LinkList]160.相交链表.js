@@ -55,6 +55,27 @@ function moveN(head, n) {
   }
   return ptr
 }
+
+
 // @lc code=end
 // 从两个链表的构造过程分析，长度做差，长的先走n步，然后再一起走就好了，而不是比较value
 
+var getIntersectionNode2 = function (headA, headB) {
+  let pa = headA, pb = headB, flagA = true, flagB = true
+  while (pa && pb && pa !== pb) {
+    if (!pa.next && flagA) {
+      pa = headB
+      flagA = false
+    } else {
+      pa = pa.next
+    }
+    if (!pb.next && flagB) {
+      pb = headA
+      flagB = false
+    } else {
+      pb = pb.next
+    }
+  }
+  return pa === pb ? pa : null
+}
+// 链表A走：A+B，链表B走B+A，这样他们第一次相遇的地方就是第一个相交的地方

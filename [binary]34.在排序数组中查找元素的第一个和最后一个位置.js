@@ -26,12 +26,12 @@ function getLeftBorder(nums, target) {
   let mid
   let leftBorder = -2 //记录没有被赋值的情况
   while (left <= right) {
-    mid = parseInt((left + right ) / 2)
+    mid = parseInt((left + right) / 2)
     if (target > nums[mid]) {
       // target在右半区间
       left = mid + 1
     } else {
-      // target在左半区间
+      // target <= nums[mid], target在左半区间
       right = mid - 1
       leftBorder = right
     }

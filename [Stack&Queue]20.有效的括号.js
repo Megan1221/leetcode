@@ -64,5 +64,22 @@ var isValid2 = function (s) {
   }
   return !stack.length;
 };
+
+// 其他版本
+var isValid3 = function (s) {
+  const left = ['(', '{', '[']
+  const right = [')', '}', ']']
+  const stack = []
+  for (let i = 0; i < s.length; i++) {
+    if (left.includes(s[i])) {
+      stack.push(s[i])
+    } else if (right.includes(s[i]) && stack.length > 0) {
+      if (left.indexOf(stack.pop()) === right.indexOf(s[i]))
+        continue
+      else return false
+    } else return false
+  }
+  return stack.length === 0
+};
 // @lc code=end
 

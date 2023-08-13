@@ -17,5 +17,6 @@ var topKFrequent = function(nums, k) {
   }
   return Array.from(countMap).sort((a,b) => b[1]-a[1]).map(arr => arr[0]).slice(0,k)
 };
+
 // @lc code=end
 

@@ -40,3 +40,14 @@ var isSymmetric = function(root) {
 
 // 后序遍历：一个是左右中，一个是右左中
 
+var isSymmetric = function (root) {
+  return checkSubTree(root.left, root.right)
+};
+
+const checkSubTree = (r1, r2) => {
+  if (!r1 && !r2) return true
+  if (r1 && r2) {
+    return r1.val === r2.val && checkSubTree(r1.left, r2.right) && checkSubTree(r1.right, r2.left)
+  }
+  return false
+}

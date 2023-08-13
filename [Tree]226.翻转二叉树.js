@@ -31,3 +31,12 @@ var invertTree = function(root) {
 };
 // @lc code=end
 
+var invertTree = function (root) {
+  if (root) {
+    const temp = invertTree(root.left)
+    root.left = invertTree(root.right)
+    root.right = temp
+  }
+  return root
+};
+

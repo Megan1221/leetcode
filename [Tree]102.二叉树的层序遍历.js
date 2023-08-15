@@ -23,7 +23,7 @@ var levelOrder = function(root) {
   const queue = [root]
   const res = []
   while (queue.length) {
-    // 记录当前层级节点数
+    // 记录当前层级节点数:上一层的节点都出队列时，此时队列的长度就是这一层的节点的数量
     let length = queue.length;
     // 存放每一层的节点
     let curLevel = []
@@ -37,5 +37,38 @@ var levelOrder = function(root) {
   }
   return res 
 };
+
+
+// 2023-8-15 下面的方法有点麻烦
+// var levelOrder = function (root) {
+//   if (!root) return []
+//   const q = [root]
+//   const res = []
+//   traverseLayer(1)
+
+//   function traverseLayer(count) {
+//     if (count === 0)
+//       return
+//     let nextLayer = 0
+//     const layer = []
+//     // 遍历当前层
+//     for (let i = 0; i < count; i++) {
+//       const top = q.shift()
+//       layer.push(top.val)
+//       if (top.left) {
+//         q.push(top.left)
+//         nextLayer++
+//       }
+//       if (top.right) {
+//         q.push(top.right)
+//         nextLayer++
+//       }
+//     }
+//     res.push(layer)
+//     traverseLayer(nextLayer)
+
+//   }
+//   return res
+// };
 // @lc code=end
 
